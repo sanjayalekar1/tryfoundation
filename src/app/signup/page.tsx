@@ -1,5 +1,6 @@
 import SignUp from "../components/SignUp";
 
+
 function SignUpPage() {
 
     return(

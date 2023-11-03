@@ -1,4 +1,7 @@
+import SignUpFrom from "./SignUpForm";
+
 const SignUp = () =>{
-    return <h1>Sign Up page</h1>
+    return <SignUpFrom />
+
 }
 export default SignUp;

@@ -79,6 +79,17 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
           </div>
       
           <div className="relative flex items-center">
+          <ul
+              className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
+              data-te-navbar-nav-ref>  
+              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
+                <Link
+                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                  href="/signup"
+                  data-te-nav-link-ref
+                  >Sign up</Link>
+              </li>
+            </ul>
             <div
               className="relative"
               data-te-dropdown-ref
