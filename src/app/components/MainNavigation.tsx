@@ -8,7 +8,7 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
 
     return (
       <nav
-        className="flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start lg:py-4">
+        className="sticky top-0 z-50 flex-no-wrap relative flex w-full items-center justify-between bg-[#FBFBFB] py-2 shadow-md shadow-black/5 dark:bg-neutral-600 dark:shadow-black/10 lg:flex-wrap lg:justify-start ">
         <div className="flex w-full flex-wrap items-center justify-between px-3">
           <button
             className="block border-0 bg-transparent px-2 text-neutral-500 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
@@ -42,8 +42,8 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
               className="mb-4 ml-2 mr-5 mt-3 flex items-center text-neutral-900 hover:text-neutral-900 focus:text-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-400 dark:focus:text-neutral-400 lg:mb-0 lg:mt-0"
               href="#">
               <img
+              className="h-10"
                 src="https://tryfoundation.org/img/try2.png"
-                style={{height: 40}}
                 alt="TRY Foundation"
                 loading="lazy" />
             </a>
@@ -78,23 +78,22 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
             </ul>
           </div>
       
-          <div className="relative flex items-center">
-          <ul
-              className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row"
-              data-te-navbar-nav-ref>  
-              <li className="mb-4 lg:mb-0 lg:pr-2" data-te-nav-item-ref>
-                <Link
-                  className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
-                  href="/signup"
-                  data-te-nav-link-ref
-                  >Sign up</Link>
-              </li>
-            </ul>
+            <div className="relative flex items-center">
+              <ul
+                className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row m-2"
+                data-te-navbar-nav-ref>  
+                <li className="m-4 lg:pr-2" data-te-nav-item-ref>
+                  <Link
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    href="/signup"
+                    data-te-nav-link-ref
+                    >Sign up</Link>
+                </li>
+              </ul>
             <div
               className="relative"
               data-te-dropdown-ref
               data-te-dropdown-alignment="end">
-             
               <a
                 className="hidden-arrow flex items-center whitespace-nowrap transition duration-150 ease-in-out motion-reduce:transition-none"
                 href="#"
@@ -103,13 +102,10 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
                 data-te-dropdown-toggle-ref
                 aria-expanded="false"
                 onClick={() => setIsProfileMenuExpanded((prev) => !prev)}
-                
                >
-              
                 <img
                   src="https://tecdn.b-cdn.net/img/new/avatars/2.jpg"
-                  className="rounded-full"
-                  style={{height: 25,  width: 25}}
+                  className="rounded-full h-8 w-8"
                   alt=""
                   loading="lazy" 
                  />
