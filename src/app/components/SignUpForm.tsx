@@ -13,22 +13,40 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useForm } from 'react-hook-form';
-import { Password } from '../../../node_modules/@mui/icons-material/index';
 
 const SignUpFrom = () =>{
     
   const{register,formState:{errors}, handleSubmit,watch,getValues} = useForm();
   const password = watch("password", "");
   
-  const onSubmit = (data:any) => {
+  const onSubmit = async (data:any) => {
     console.log(data);
+    
+    try {
+      const response =  await fetch('http://127.0.0.1:8000/api/register',{
+        method:'POST',
+        headers:{
+          'Content-Type':'application/json',
+        },
+        body:JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        console.log('Signup Successful');
+      } else { 
+        console.error('SignupFailed');
+      }
+
+    } catch(error) {
+      console.error('An Error Occured',error);
+    }
   }
 
     return(
       <section className="h-screen">
         <div className="h-full">
           <div className="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-              <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-6/12">
+              <div className="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-/12">
                 <Container component="main" maxWidth="xs">
                 <CssBaseline />
                 <Box

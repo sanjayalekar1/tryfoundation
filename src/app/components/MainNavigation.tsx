@@ -1,9 +1,12 @@
 'use client';
 import { useState } from "react";
-import Link from "../../../node_modules/next/link";
+import Link from "next/link";
 import ProfileDropDown from "./ProfileDropDown";
+import {useRouter} from 'next/navigation';
 
 function MainNavigation () {
+
+  const router = useRouter();
 const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
 
     return (
@@ -75,6 +78,7 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
                   data-te-nav-link-ref
                   >Contact</Link>
               </li>
+              
             </ul>
           </div>
       
@@ -82,6 +86,14 @@ const [isProfileMenuExpanded, setIsProfileMenuExpanded] = useState(false);
               <ul
                 className="list-style-none mr-auto flex flex-col pl-0 lg:flex-row m-2"
                 data-te-navbar-nav-ref>  
+                <li className="m-4 lg:pr-2" data-te-nav-item-ref>
+                  
+                  <Link
+                    className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+                    href="/auth"
+                    data-te-nav-link-ref
+                    >Login</Link>
+                </li>
                 <li className="m-4 lg:pr-2" data-te-nav-item-ref>
                   <Link
                     className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"

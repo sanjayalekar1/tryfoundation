@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google';
 import MainNavigation from './components/MainNavigation';
 import './globals.css';
 import '../../public/assets/style.css';
+import { createBrowserRouter } from 'react-router-dom';
 
 
 
